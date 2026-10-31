@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
-  <a href="https://github.com/ishandutta2007/Awesome-Status-Page-Incident-Communication/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Status-Page-Incident-Communication?style=flat-square&color=gold" alt="GitHub Stars" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Status-Page-Incident-Communication/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Status-Page-Incident-Communication?style=flat-square&color=gold" alt="GitHub_Stars" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-Status-Page-Incident-Communication/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Status-Page-Incident-Communication?style=flat-square&color=blue" alt="GitHub Forks" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-Status-Page-Incident-Communication/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat-square" alt="License" /></a>
   <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
@@ -63,9 +63,9 @@ The sector displays a **moderately fragmented yet converging structure**: catego
 
 ## 🛠️ Open-Source & Self-Hosted Status Pages
 
-### 🌟 Open-Source Comparison Table (Sorted by GitHub Stars)
+### 🌟 Open-Source Comparison Table (Sorted by GitHub_Stars)
 
-| Open-Source Project | GitHub Stars Badge | License | Stack / Tech | Architectural Focus & Best Use Case |
+| Open-Source Project | GitHub_Stars_Badge | License | Stack / Tech | Architectural Focus & Best Use Case |
 | :--- | :--- | :--- | :--- | :--- |
 | **[Uptime Kuma](https://github.com/louislam/uptime-kuma)** | [![Stars](https://img.shields.io/github/stars/louislam/uptime-kuma?style=social&color=white)](https://github.com/louislam/uptime-kuma/stargazers) | MIT | Node.js, Vue, SQLite | Self-hosted monitoring Swiss Army knife with 30+ check types & customizable status pages. |
 | **[Upptime](https://github.com/upptime/upptime)** | [![Stars](https://img.shields.io/github/stars/upptime/upptime?style=social&color=white)](https://github.com/upptime/upptime/stargazers) | MIT | GitHub Actions, Git, Svelte | 100% serverless, zero-maintenance uptime monitor and static status page running directly via GitHub. |
