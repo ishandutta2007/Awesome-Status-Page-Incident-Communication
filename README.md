@@ -35,6 +35,8 @@ The sector displays a **moderately fragmented yet converging structure**: catego
   - [Open-Source Comparison Table](#-open-source-comparison-table-sorted-by-github-stars)
   - [Deep-Dive & Architecture Summaries](#-open-source-deep-dive--architecture-summaries)
 - [How to Choose the Right Tool](#-how-to-choose-the-right-tool)
+- [Support](#-support)
+- [Star History](#-star-history)
 - [Contribution Guide](#-how-to-contribute)
 - [Disclaimer & Best Practices](#-disclaimer--best-practices)
 
@@ -119,6 +121,22 @@ The sector displays a **moderately fragmented yet converging structure**: catego
 - **For Fast Setup & Zero Infrastructure**: Choose **[Upptime](https://github.com/upptime/upptime)** or **[UptimeFlare](https://github.com/lyc8503/UptimeFlare)**.
 - **For Full Control with Subscriber Notifications**: Deploy **[OpenStatus](https://github.com/openstatusHQ/openstatus)** or **[Kener](https://github.com/rajnandan1/kener)**.
 - **For Developer-Centric Homelabs & Internal Dashboards**: Run **[Uptime Kuma](https://github.com/louislam/uptime-kuma)** or **[Gatus](https://github.com/TwiN/gatus)**.
+
+---
+
+## 💖 Support
+
+Thank you for visiting and using this curated ecosystem guide! If you found this repository helpful for evaluating status pages or incident management infrastructure, please consider supporting the project:
+
+- ⭐ **Star this repository** to help others discover it.
+- 🍴 **Fork and share** it with fellow SREs, DevOps engineers, and support leads.
+- ☕ **Buy a coffee & sponsor**: You can support ongoing maintenance and new curated additions directly through the [GitHub Sponsor Dashboard](https://github.com/sponsors/ishandutta2007).
+
+---
+
+## 📈 Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-Status-Page-Incident-Communication&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Awesome-Status-Page-Incident-Communication&type=date&legend=top-left)
 
 ---
 
