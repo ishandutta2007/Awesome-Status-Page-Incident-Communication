@@ -1,215 +1,149 @@
-# Awesome-Status-Page-Incident-Communication
-
-## Top Status Page & Incident Communication Ecosystem
-
-
-
-**Curated List of SaaS Products & Open-Source GitHub Projects**  
-
-*Focused on Public Status Communication, Subscriber Notifications & Self-Hosted Incident Pages*  
-
-**Last updated: October 2026**
-
-
-
-This repository tracks notable **SaaS platforms** and **open-source projects** for **Status Page & Incident Communication**. These tools enable organizations to publish real-time service health, announce incidents and maintenance windows, and keep customers informed during outages—turning downtime into a trust-building moment rather than a support ticket flood.
-
-
-
-**Examples** include Statuspage (Atlassian), Better Stack, Incident.io, Instatus, Status.io, Hund, StatusCast, Cachet, StatusTicker, and FireHydrant (the category leaders).
-
-
-
-**Open-source emphasis**: Status Page & Incident Communication is a domain where open-source tooling is **genuinely viable but requires careful selection based on whether you need monitoring, communication, or both**. **Cachet** is the classic status-page-first tool—components, incidents, maintenance, metrics, and email/webhook subscribers—but its v3 rewrite has been in progress for years and the newest stable release is v2.4.1 from November 2023 . **Kener** offers a modern Node.js alternative with full incident lifecycle, 11 monitoring types, email/RSS subscribers, and an MIT license . **Uptime Kuma** is the default monitoring-first option with 31 check types and a built-in status page, but it lacks subscriber notifications beyond RSS . **OpenStatus** (AGPL-3.0) combines uptime checks and status pages with email, webhook, Slack, and RSS subscribers, plus a REST API and Terraform provider—but self-hosting requires operating several services . The critical caveat: **no single open-source project perfectly balances monitoring, communication, and operational simplicity**—Uptime Kuma is easy but lacks subscribers, Cachet has subscribers but is stagnant, and OpenStatus has both but requires more infrastructure .
-
-
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-
-
-## Table of Contents
-
-- [SaaS/Hosted Platforms](#saas-products)
-
-- [Open-Source GitHub Projects](#open-source-github-projects)
-
-- [How to Contribute](#how-to-contribute)
-
-- [Disclaimer](#disclaimer)
-
-
-
-## SaaS/Hosted Platforms
-
-
-
-- **[Statuspage (Atlassian)](https://www.statuspage.io/)**  
-
-  The market-leading hosted status page platform; components, incidents, scheduled maintenance, subscriber notifications via email/SMS/Slack/webhooks, and a vast integration ecosystem. The benchmark against which all alternatives are measured.
-
-
-
-- **[Better Stack](https://betterstack.com/)**  
-
-  Observability and incident management platform with integrated uptime monitoring, on-call scheduling, and status pages; recent additions include AI post-mortems and SOC 2 Type 2 / ISO 27001 compliance.
-
-
-
-- **[Incident.io](https://incident.io/)**  
-
-  Incident management platform with automated Slack-based workflows, status page generation, and post-incident retrospectives; focused on engineering-led incident response.
-
-
-
-- **[Instatus](https://instatus.com/)**  
-
-  Lightweight, fast status page service with a clean interface and affordable pricing; popular with indie developers and small teams.
-
-
-
-- **[Status.io](https://status.io/)**  
-
-  Status page and incident communication platform with component management, subscriber notifications, and metrics integration.
-
-
-
-- **[Hund](https://hund.io/)**  
-
-  Status page platform focused on simplicity and speed; includes incident management, maintenance scheduling, and subscriber notifications.
-
-
-
-- **[StatusCast](https://www.statuscast.com/)**  
-
-  Incident communication platform with status pages, mass notifications, and integration with monitoring tools.
-
-
-
-- **[Cachet (Cloud)](https://cachethq.io/)**  
-
-  The hosted version of the open-source Cachet; provides the same component/incident/subscriber model without infrastructure management.
-
-
-
-- **[StatusTicker](https://statusticker.com/)**  
-
-  Simple status page service with component monitoring and incident updates; positioned for teams wanting minimal setup.
-
-
-
-- **[FireHydrant](https://firehydrant.com/)**  
-
-  Incident management platform with status page integration, runbooks, and retrospective workflows; focused on the full incident lifecycle beyond just the public page.
-
-
-
-## Open-Source GitHub Projects
-
-
-
-### Status-Page-First (Communication Focus)
-
-
-
-- **[Cachet](https://github.com/cachethq/cachet)**  
-
-  The classic open-source **self-hosted status page** (BSD-3-Clause for v2, source-available for v3) with ~15,200 GitHub stars . Features: **components** with status levels (Operational, Performance Issues, Partial Outage, Major Outage), **incident management** with timestamped updates, **scheduled maintenance**, custom **metrics** (response time, uptime), **subscriber notifications** via email and webhook, JSON API, and 30+ language translations . **Critical caveat**: the newest stable release is v2.4.1 from November 2023; **v3 ships from an untagged development branch and is not yet completely ready for production use**—it also moves from BSD to a source-available license . **Best for teams wanting a traditional, dashboard-driven status page** who can accept the maintenance risk of a project in transition—but verify which version you are deploying.
-
-
-
-- **[cState](https://github.com/cstate/cstate)**  
-
-  Ultra-lightweight **static status page** built with Hugo (MIT) . Generates a fast, serverless site hosted anywhere; incidents are created via Markdown files; **no active monitoring, no alerting, no subscriber notifications beyond RSS** . **Best for open-source projects or documentation sites** wanting a simple incident communication page with zero infrastructure—not for customer-facing SaaS status pages requiring subscribers.
-
-
-
-### Monitoring-First (With Built-In Status Pages)
-
-
-
-- **[Uptime Kuma](https://github.com/louislam/uptime-kuma)**  
-
-  The default open-source **monitoring tool** with ~91,800 GitHub stars and a built-in status page (MIT) . Features: **31 check types** in one container, configurable status page on your own domain, and maintenance announcements. **Critical limitation**: **incidents are posted manually** even when Kuma detects a failure, and **visitors can only follow via RSS**—there is no email subscriber list . **Best for homelabs and internal pages** where RSS is sufficient; **not for customer-facing status pages** where subscribers expect email notifications.
-
-
-
-- **[Gatus](https://github.com/TwiN/gatus)**  
-
-  Developer-oriented **declarative monitoring** tool (Apache-2.0) with a lightweight status page UI . Features: **YAML-based configuration** (no database for config), 8+ check types, low resource usage (~10–30MB RAM), and a built-in status page . **Limitations**: **no incident management, no maintenance scheduling, no subscriber notifications, no REST API**—it is a health dashboard, not an incident communication platform . **Best for DevOps teams wanting monitoring-as-code** with a simple public health view.
-
-
-
-### Modern All-in-One (Monitoring + Communication)
-
-
-
-- **[OpenStatus](https://github.com/openstatusHQ/openstatus)**  
-
-  The strongest open-source **combined monitoring and status page** platform (AGPL-3.0, ~9,100 GitHub stars) . Features: **uptime checks** (HTTP, TCP, DNS) in the open-source checker, **status page** with custom domains, **incidents opened automatically from failing checks**, **subscriber notifications** via email, webhook, Slack, and RSS, **REST API** and **Terraform provider** . **Caveats**: self-hosting requires operating **several separate services**, it ships continuously **without tagged releases**, and the open-source checker supports only HTTP/TCP/DNS (other types exist in the API schema but not the checker) . **Best for teams wanting an integrated open-source alternative to Statuspage + monitoring** who can handle the operational complexity of multiple services.
-
-
-
-- **[Kener](https://github.com/rajnandan1/kener)**  
-
-  Modern open-source **status page with incident management** (MIT, Node.js/SvelteKit) . Features: **11 monitoring types**, full incident lifecycle, maintenance windows with RRULE, **email subscriber notifications**, 4 alerting channels, REST API (17+ endpoints), RBAC (3 roles), multi-database support (SQLite/PostgreSQL/MySQL), custom theming, and embeddable widgets . **Best for teams wanting a modern, feature-complete status page with built-in monitoring**—MIT licensed and actively developed. **Caveat**: requires Node.js + Redis infrastructure, and smaller community than Uptime Kuma or Cachet .
-
-
-
-### Additional Strong Open-Source Options
-
-
-
-- **OneUptime** — Full observability platform with public/private status pages, monitoring, incident management, and subscriber notifications (Apache-2.0 + enterprise) . **Heavier stack**—for teams wanting an all-in-one observability suite with status pages, not just a status page.
-
-- **Upptime** — GitHub Actions-powered monitoring and static status page (MIT); **zero server setup**, but **5-minute minimum check interval** (GitHub Actions constraint), **no subscriber notifications**, and GitHub-only . **Best for open-source projects** already on GitHub wanting free, zero-maintenance uptime pages.
-
-- **Suchaka** — Self-hosted status page with Go agent for HTTP monitoring, React/Node.js dashboard, PostgreSQL time-series storage, and multi-region support (Docker) . **Newer project**—verify production maturity, but offers a modern stack and explicit comparison against Cachet .
-
-- **Fyren** — Self-hosted status page and incident management (Elastic License 2.0) with HTTP/TCP/SSL monitoring, incident lifecycle, maintenance windows, email/Slack/Discord/webhook notifications, and embeddable widgets . **License caveat**: ELv2 restricts offering as a managed service—verify terms if embedding in a commercial product .
-
-
-
-**Frameworks for building custom systems**: The choice hinges on whether you need **communication-first** or **monitoring-first**. For **status-page-first with subscribers** (Statuspage alternative), Cachet (accepting v3 transition risk) or Kener . For **monitoring-first with a status view** (Uptime Kuma alternative), Gatus for declarative config or Uptime Kuma for ease . For **combined monitoring + communication with subscribers**, OpenStatus (accepting multi-service complexity) or Kener (simpler, MIT) . For **zero-infrastructure static pages**, cState or Upptime . No open-source project perfectly matches Statuspage's **managed reliability and integration ecosystem**—self-hosting means owning uptime, email deliverability, and upgrades.
-
-
-
-## How to Contribute
-
-
-
-1. Fork the repo.
-
-2. Add/edit entries in `README.md` (follow existing format).
-
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-
-4. Submit PR with a short explanation.
-
-
-
-Star the repo if you find it useful!
-
-
-
-## Disclaimer
-
-
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-
-- Status page platforms handling incident data and subscriber lists must comply with applicable privacy regulations (GDPR, CCPA) and data retention policies; **self-hosted status pages are especially vulnerable during the exact outages they are meant to communicate**—ensure the status page infrastructure is independent of the services it monitors .
-
-- **Open-source status pages are mature but fragmented**—Cachet is the classic but **v3 is not production-ready** ; Uptime Kuma is popular but **lacks email subscribers** ; OpenStatus and Kener provide combined monitoring and communication but require more infrastructure. **No open-source project matches Statuspage's managed reliability and subscriber ecosystem**—choose based on whether your priority is communication (Cachet/Kener), monitoring (Uptime Kuma/Gatus), or both (OpenStatus/Kener).
-
-- Verify license terms for commercial use; Cachet v2 uses BSD-3-Clause but **v3 moves to source-available** , Kener uses MIT , Uptime Kuma uses MIT, Gatus uses Apache-2.0, and OpenStatus uses AGPL-3.0 .
-
-
+# Awesome Status Page & Incident Communication 📡🚨
+
+<p align="center">
+  <img src="assets/banner.svg" alt="Awesome Status Page and Incident Communication Banner" width="100%" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Status-Page-Incident-Communication/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Status-Page-Incident-Communication?style=flat-square&color=gold" alt="GitHub Stars" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Status-Page-Incident-Communication/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Status-Page-Incident-Communication?style=flat-square&color=blue" alt="GitHub Forks" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Status-Page-Incident-Communication/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat-square" alt="License" /></a>
+  <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+</p>
 
 ---
 
+## 🧭 Overview & Ecosystem Insights
 
+Welcome to the definitive, SEO-optimized curated collection of **Status Page & Incident Communication** platforms. Whether managing critical mission-critical downtime, conducting scheduled maintenance, or automating multi-channel subscriber notifications (SMS, email, Webhooks, Slack, Teams), this directory indexes industry-leading **Enterprise SaaS solutions** alongside battle-tested **Self-Hosted Open-Source alternatives**.
 
-**Made for SREs, support managers, and teams choosing their incident communication platform.**  
+---
 
-Let's make status pages more open, but with clear eyes about the v3 transition risks and subscriber notification gaps that define each tool.
+## 📊 Sector Overview & Market Dynamics
+
+The global **Incident Communication & Status Page** market—closely integrated with IT Incident Management and Digital Experience Monitoring—is estimated at **$1.8B to $2.4B** and is projected to expand at a **~14.5% CAGR**. 
+
+The sector displays a **moderately fragmented yet converging structure**: category incumbents like Atlassian Statuspage maintain enterprise market share, but modern unified observability suites (Better Stack, Incident.io, FireHydrant) and developer-first static/edge platforms (Instatus, OpenStatus) are aggressively capturing mid-market and cloud-native workloads through automated ChatOps and developer ergonomics.
+
+---
+
+## 📑 Table of Contents
+- [Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
+- [Enterprise & Modern SaaS Platforms](#-enterprise--modern-saas-platforms)
+- [Open-Source & Self-Hosted Status Pages](#-open-source--self-hosted-status-pages)
+  - [Open-Source Comparison Table](#-open-source-comparison-table-sorted-by-github-stars)
+  - [Deep-Dive & Architecture Summaries](#-open-source-deep-dive--architecture-summaries)
+- [How to Choose the Right Tool](#-how-to-choose-the-right-tool)
+- [Contribution Guide](#-how-to-contribute)
+- [Disclaimer & Best Practices](#-disclaimer--best-practices)
+
+---
+
+## ☁️ Enterprise & Modern SaaS Platforms
+
+*Below is a comprehensive comparison of leading commercial status page and incident response suites, sorted descending by parent company scale (valuation / market capitalization / estimated ARR).*
+
+| SaaS Product | Starting Pricing Tier | Free Tier / Trial Limit | Company Scale (Valuation / Scale) | Core Capabilities & Differentiators |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Statuspage (Atlassian)](https://www.statuspage.io/)** | **$29/month** (Hobby plan) | **Free plan available**: 100 subscribers, 2 team members, 2 metrics, and basic incident communication | **~$48 Billion** *(Atlassian NASDAQ: TEAM market cap)* | The enterprise gold standard for public, private, and audience-specific status pages. Extensive third-party component integrations and multi-channel subscriber broadcasting. |
+| **[Better Stack](https://betterstack.com/)** | **$29/month** (Freelancer / Uptime plan) | **Free plan available**: 10 monitors, 3-minute checks, 1 status page, unlimited email alerts | **~$500 Million** *(Latest private valuation / Series A)* | Combines uptime synthetic monitoring, on-call paging, log analytics, incident response, and status pages into one unified platform with SOC 2 & ISO 27001 compliance. |
+| **[FireHydrant](https://firehydrant.com/)** | **$29/user/month** (Starter plan) | **30-day free trial** with full access to incident commander runbooks, integrations, and status pages | **~$300 Million** *(Total funding ~$38M+; Series B scale)* | End-to-end incident response orchestration featuring automated Slack/Teams incident commander channels, retrospective timelines, and public/internal status pages. |
+| **[Incident.io](https://incident.io/)** | **$19/user/month** (Starter tier; min seats apply) | **14-day free trial** featuring full ChatOps workflows, automated incident response, and status catalog | **~$200 Million** *(Total funding ~$34M+; Series A/B scale)* | Slack-native and Teams-native engineering incident management platform with integrated public status pages, incident workflows, and AI post-mortems. |
+| **[StatusCast](https://www.statuscast.com/)** | **$39/month** (Starter plan) | **14-day free trial** with full access to scheduled maintenance announcements, monitors, and employee paging | **~$30 Million - $50 Million** *(Bootstrapped profitable / Lower mid-market)* | Enterprise status communication focused on dual internal employee status portals and external customer incident communication with SSO and mass paging. |
+| **[Status.io](https://status.io/)** | **$79/month** (Basic plan) | **7-day free trial** with access to multi-region infrastructure, custom domain, and subscriber alerts | **~$10 Million - $20 Million** *(Established bootstrapped market pioneer)* | Highly resilient architecture built completely independent of primary clouds; offers granular multi-cluster status components, custom HTML/CSS, and extensive webhooks. |
+| **[Instatus](https://instatus.com/)** | **$20/month** (Pro plan, unlimited subs) | **Free plan available**: Unlimited subscribers, 3 team members, unlimited status updates, instatus.subdomain | **~$10 Million - $15 Million** *(Fast-growing indie SaaS / Seed scale)* | Ultra-fast CDN-backed status pages that load in milliseconds; affordable flat pricing without per-subscriber penalty pricing. |
+| **[Hund](https://hund.io/)** | **$49/month** (Standard plan) | **14-day free trial** with full access to automated check watchers, custom domain, and multi-channel notices | **~$5 Million - $10 Million** *(Independent niche enterprise provider)* | Clean, no-nonsense automated status page with built-in health monitors, metric graphs, SSL tracking, and granular incident escalation policies. |
+| **[Cachet (Cloud)](https://cachethq.io/)** | **$19/month** (Hosted Basic) | **14-day free trial** with fully hosted instance, custom domain, and email subscriber notifications | **~$3 Million - $6 Million** *(Commercial cloud arm of open-source Cachet)* | Fully hosted and managed distribution of Cachet, eliminating self-hosting overhead while delivering the classic dashboard-driven status experience. |
+| **[StatusTicker](https://statusticker.com/)** | **$10/month** (Starter plan) | **14-day free trial** with up to 10 component checks, custom styling, and incident tracking | **~$1 Million - $3 Million** *(Micro-SaaS / Indie maker project)* | Lightweight, minimalist status communication platform targeted at indie hackers, agencies, and small SaaS businesses seeking instant setup. |
+
+---
+
+## 🛠️ Open-Source & Self-Hosted Status Pages
+
+### 🌟 Open-Source Comparison Table (Sorted by GitHub Stars)
+
+| Open-Source Project | GitHub Stars Badge | License | Stack / Tech | Architectural Focus & Best Use Case |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Uptime Kuma](https://github.com/louislam/uptime-kuma)** | [![Stars](https://img.shields.io/github/stars/louislam/uptime-kuma?style=social&color=white)](https://github.com/louislam/uptime-kuma/stargazers) | MIT | Node.js, Vue, SQLite | Self-hosted monitoring Swiss Army knife with 30+ check types & customizable status pages. |
+| **[Upptime](https://github.com/upptime/upptime)** | [![Stars](https://img.shields.io/github/stars/upptime/upptime?style=social&color=white)](https://github.com/upptime/upptime/stargazers) | MIT | GitHub Actions, Git, Svelte | 100% serverless, zero-maintenance uptime monitor and static status page running directly via GitHub. |
+| **[Cachet](https://github.com/cachethq/cachet)** | [![Stars](https://img.shields.io/github/stars/cachethq/cachet?style=social&color=white)](https://github.com/cachethq/cachet/stargazers) | BSD-3-Clause / Source-Available | PHP (Laravel), Blade | The pioneer open-source status page with components, incident management, metrics, and email subscribers. |
+| **[Gatus](https://github.com/TwiN/gatus)** | [![Stars](https://img.shields.io/github/stars/TwiN/gatus?style=social&color=white)](https://github.com/TwiN/gatus/stargazers) | Apache-2.0 | Go, Pure CSS/JS | Ultra-lightweight declarative monitoring-as-code status dashboard configured via clean YAML files. |
+| **[Healthchecks](https://github.com/healthchecks/healthchecks)** | [![Stars](https://img.shields.io/github/stars/healthchecks/healthchecks?style=social&color=white)](https://github.com/healthchecks/healthchecks/stargazers) | BSD-3-Clause | Python, Django | Specialized cron job, daemon, and background task heartbeat monitoring with public/private status badges. |
+| **[OpenStatus](https://github.com/openstatusHQ/openstatus)** | [![Stars](https://img.shields.io/github/stars/openstatusHQ/openstatus?style=social&color=white)](https://github.com/openstatusHQ/openstatus/stargazers) | AGPL-3.0 | Next.js, TypeScript, Go | Modern, distributed synthetic monitoring and incident status platform with multi-channel subscriber alerts. |
+| **[OneUptime](https://github.com/OneUptime/oneuptime)** | [![Stars](https://img.shields.io/github/stars/OneUptime/oneuptime?style=social&color=white)](https://github.com/OneUptime/oneuptime/stargazers) | Apache-2.0 | TypeScript, Node.js, Docker | Complete open-source DataDog & PagerDuty alternative featuring status pages, on-call, telemetry, and logs. |
+| **[Statping](https://github.com/statping/statping)** | [![Stars](https://img.shields.io/github/stars/statping/statping?style=social&color=white)](https://github.com/statping/statping/stargazers) | GPL-3.0 | Go, Vue.js | Classic self-hosted status page with mobile app support, charts, multi-database support, and offline alerts. |
+| **[Kener](https://github.com/rajnandan1/kener)** | [![Stars](https://img.shields.io/github/stars/rajnandan1/kener?style=social&color=white)](https://github.com/rajnandan1/kener/stargazers) | MIT | Node.js, SvelteKit, Tailwind | Modern status page with full incident management, 11 monitoring probes, recurring maintenance, and email alerts. |
+| **[UptimeFlare](https://github.com/lyc8503/UptimeFlare)** | [![Stars](https://img.shields.io/github/stars/lyc8503/UptimeFlare?style=social&color=white)](https://github.com/lyc8503/UptimeFlare/stargazers) | MIT | Cloudflare Workers, Pages | Serverless uptime monitoring and status page running globally on Cloudflare edge infrastructure for free. |
+| **[Checkup](https://github.com/sourcegraph/checkup)** | [![Stars](https://img.shields.io/github/stars/sourcegraph/checkup?style=social&color=white)](https://github.com/sourcegraph/checkup/stargazers) | Apache-2.0 | Go | Distributed, lock-free self-hosted health check and status generator created by Sourcegraph. |
+| **[cState](https://github.com/cstate/cstate)** | [![Stars](https://img.shields.io/github/stars/cstate/cstate?style=social&color=white)](https://github.com/cstate/cstate/stargazers) | MIT | Hugo, Jamstack | Super-fast, serverless static incident status site driven by Markdown content and hosted on GitHub/Netlify/Vercel. |
+| **[CF Workers Status Page](https://github.com/eidam/cf-workers-status-page)** | [![Stars](https://img.shields.io/github/stars/eidam/cf-workers-status-page?style=social&color=white)](https://github.com/eidam/cf-workers-status-page/stargazers) | MIT | Cloudflare Workers, KV | Monitor website uptime and status history serverlessly on Cloudflare Workers edge with Telegram/Slack alerts. |
+| **[Statusfy](https://github.com/juliomrqz/statusfy)** | [![Stars](https://img.shields.io/github/stars/juliomrqz/statusfy?style=social&color=white)](https://github.com/juliomrqz/statusfy/stargazers) | Apache-2.0 | Nuxt.js, Vue.js, Markdown | Markdown-based status page engine with multi-language i18n, PWA support, and static site export. |
+| **[Staytus](https://github.com/adamcooke/staytus)** | [![Stars](https://img.shields.io/github/stars/adamcooke/staytus?style=social&color=white)](https://github.com/adamcooke/staytus/stargazers) | MIT | Ruby on Rails, MySQL | Elegant standalone web application to publish service status, incident timelines, and email notifications. |
+| **[Statping-ng](https://github.com/statping-ng/statping-ng)** | [![Stars](https://img.shields.io/github/stars/statping-ng/statping-ng?style=social&color=white)](https://github.com/statping-ng/statping-ng/stargazers) | GPL-3.0 | Go, Vue.js | Community-maintained fork of Statping fixing security issues, database drivers, and notification dispatch. |
+| **[Vigil](https://github.com/valeriansaliou/vigil)** | [![Stars](https://img.shields.io/github/stars/valeriansaliou/vigil?style=social&color=white)](https://github.com/valeriansaliou/vigil/stargazers) | MPL-2.0 | Rust | High-performance microservices status page and health monitoring server written in Rust with instant alerting. |
+| **[TinyStatus](https://github.com/harsxv/tinystatus)** | [![Stars](https://img.shields.io/github/stars/harsxv/tinystatus?style=social&color=white)](https://github.com/harsxv/tinystatus/stargazers) | MIT | Python, Jinja2 | Ultra-minimalist single-file Python script generating an instant static status page dashboard. |
+| **[LambStatus](https://github.com/ks888/LambStatus)** | [![Stars](https://img.shields.io/github/stars/ks888/LambStatus?style=social&color=white)](https://github.com/ks888/LambStatus/stargazers) | Apache-2.0 | AWS Lambda, DynamoDB | Serverless status page system designed to run entirely within AWS free-tier compute with near-zero overhead. |
+
+---
+
+### 🔍 Open-Source Deep-Dive & Architecture Summaries
+
+- **[Uptime Kuma](https://github.com/louislam/uptime-kuma)**: Single Docker container setup that features 30+ check probes (HTTP/HTTPS, TCP Port, Ping, DNS Record, Push Heartbeat, Steam Game Server, Docker Container status), customizable status pages on separate domains, and Telegram/Discord/Slack alerts. *Note: Incident posting is manual and email subscriber list management is not natively bundled.*
+- **[Upptime](https://github.com/upptime/upptime)**: Uses GitHub Actions for scheduled uptime checks, GitHub Issues for incident tracking, and GitHub Pages for rendering a sleek Svelte status page. Zero servers, zero maintenance cost, though check frequency is bound by GitHub Actions schedule intervals (~5 min).
+- **[OpenStatus](https://github.com/openstatusHQ/openstatus)**: Features automated incident generation from failing checks, beautiful Next.js UI, public REST API, and multi-channel notifications (Email, Webhook, Slack, Discord, RSS).
+- **[Kener](https://github.com/rajnandan1/kener)**: Node.js/SvelteKit status page tool with multi-database persistence (SQLite/PostgreSQL/MySQL), scheduled maintenance rules (RRULE), 11 active probe types, and subscriber email broadcasting.
+- **[Gatus](https://github.com/TwiN/gatus)**: Configuration-as-code status dashboard. Driven entirely by a clean YAML file without external database requirements; supports alerts to Slack, Discord, PagerDuty, and custom webhooks.
+- **[OneUptime](https://github.com/OneUptime/oneuptime)**: Comprehensive open-source observability suite. Integrates status pages with telemetry (logs, metrics, traces), on-call scheduling, and automated workflows.
+
+---
+
+## 🎯 How to Choose the Right Tool
+
+```
+                                  [Need a Status Page?]
+                                            |
+                   ---------------------------------------------------
+                   |                                                 |
+         [Fully-Managed SaaS]                              [Self-Hosted / Open-Source]
+                   |                                                 |
+         -----------------------                           -----------------------
+         |                     |                           |                     |
+  [Status-Only Focus]   [Unified Suite]             [Monitoring-First]   [Communication-First]
+  - Statuspage          - Better Stack              - Uptime Kuma        - Cachet
+  - Instatus            - Incident.io               - Gatus              - Kener
+  - Status.io           - FireHydrant               - Upptime            - OpenStatus
+```
+
+- **For Enterprise Compliance & High Subscriber Volume**: Choose **[Statuspage](https://www.statuspage.io/)** or **[Better Stack](https://betterstack.com/)**.
+- **For Fast Setup & Zero Infrastructure**: Choose **[Upptime](https://github.com/upptime/upptime)** or **[UptimeFlare](https://github.com/lyc8503/UptimeFlare)**.
+- **For Full Control with Subscriber Notifications**: Deploy **[OpenStatus](https://github.com/openstatusHQ/openstatus)** or **[Kener](https://github.com/rajnandan1/kener)**.
+- **For Developer-Centric Homelabs & Internal Dashboards**: Run **[Uptime Kuma](https://github.com/louislam/uptime-kuma)** or **[Gatus](https://github.com/TwiN/gatus)**.
+
+---
+
+## 🤝 How to Contribute
+
+Contributions are warmly encouraged! To submit a new tool or suggest updates:
+1. Fork this repository 🍴
+2. Create your feature branch (`git checkout -b feature/add-new-status-tool`)
+3. Add your entry following the established table structure and include accurate pricing/star data 📝
+4. Commit your changes (`git commit -m 'feat: add NewTool status platform'`)
+5. Push to the branch (`git push origin feature/add-new-status-tool`)
+6. Open a Pull Request with a clear description 🚀
+
+---
+
+## ⚠️ Disclaimer & Best Practices
+
+> [!WARNING]
+> **Independent Hosting Rule**: Never host your self-hosted status page on the exact same cloud cluster, VPC, or infrastructure provider that powers your production services. If your primary cloud region goes down, your status page must remain online to communicate with users.
+
+> [!NOTE]
+> Pricing tiers and repository metrics are actively audited. Commercial SaaS pricing and free tier terms are subject to change by respective vendors.
+
+---
+
+<p align="center">
+  <sub>Maintained with ❤️ by <a href="https://github.com/ishandutta2007">Ishan Dutta</a> and community contributors worldwide.</sub>
+</p>
